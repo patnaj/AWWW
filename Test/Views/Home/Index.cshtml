@@ -1,0 +1,18 @@
+﻿@model IList<ProductModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <table>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Id</td><td>@item.Title</td><td>@item.Desc</td>
+        <td><a href="@Url.Action("Del", new {id=item.Id})">Del</a></td>
+        <td><a href="@Url.Action("Edit", new {id=item.Id})">Edit</a></td>
+        </tr>
+    }
+    </table>
+</div>
