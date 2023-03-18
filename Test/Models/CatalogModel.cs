@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
+#pragma warning disable CS8618
 namespace Test.Models;
+
 
 public class CatalogModel
 {
