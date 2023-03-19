@@ -1,0 +1,16 @@
+﻿@model CatalogModel
+@{
+    ViewData["Title"] = "Home Page";    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>@Model.Title</p>
+    <table>    
+    @foreach (ProductModel item in ViewBag.prod)
+    {
+        <tr><td>@item.Title</td><td>@item.Description</td></tr>
+    }
+    </table>
+
+</div>

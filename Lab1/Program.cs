@@ -26,6 +26,6 @@ app.MapControllerRoute(name: "test",
 
 app.MapControllerRoute(
     name: "default2",
-    pattern: "{controller=Home}/{action=lista}/{id?}");
+    pattern: "{action=lista}/{controller=Home}/{id?}");
 
 app.Run();
