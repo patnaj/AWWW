@@ -1,0 +1,16 @@
+﻿@model PersonModelView
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<p>@ViewBag.fun</p>
+<form asp-action="Person">
+<input asp-for="Name" />
+<span asp-validation-for="Name" ></span>
+<input type="submit" value="ok" />
+</form>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
