@@ -43,13 +43,16 @@ namespace Lab3_test.Services
 
     public class MyClass : ITimeServie
     {
+        private int dd = 0;
+
         public int sec => 0;
 
         public int hou => 1;
 
         public int fun1(int a)
         {
-            return a/2;
+            dd+=a;
+            return dd;
         }
     }
 }

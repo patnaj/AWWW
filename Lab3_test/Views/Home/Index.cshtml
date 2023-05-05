@@ -2,7 +2,12 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+
 <form asp-action="Person">
+
+<div asp-validation-summary="All" >
+    <span>Please correct the following errors</span>
+</div>
 <input asp-for="Name" />
 <span asp-validation-for="Name" />
 <input type="submit" value="ok" />

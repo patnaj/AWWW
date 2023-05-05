@@ -23,6 +23,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ModelState.AddModelError("Contact.ShortName", 
+                                 "Short name can't be the same as Name.");
+
         // serv.getFirst();
         serv.getList(a=>a.Name == "A");
         return View();
@@ -45,7 +48,6 @@ public class HomeController : Controller
         }
         return View(person);
     }
-
 
     public IActionResult Privacy()
     {
