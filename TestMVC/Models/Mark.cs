@@ -14,5 +14,7 @@ namespace TestMVC.Models
         public DateTime Date { get; set; }
         [Required]
         public string Subject { get; set; } = "";
+        [Required]
+        public float Value { get; set; } = 0;
     }
 }
