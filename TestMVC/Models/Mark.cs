@@ -7,7 +7,7 @@ namespace TestMVC.Models
     {
         [Key]
         public int Id {get;set;}
-        public int StudentId {get;set;}
+        public string StudentId {get;set;} = "";
         [ForeignKey("StudentId")]
         public virtual Student Student { get; set; } = null!;
         [Required]
