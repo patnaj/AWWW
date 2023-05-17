@@ -1,0 +1,35 @@
+﻿@model List<Mark>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Oceny: @ViewBag.stud</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Data</th>
+                <th>Przedmiot</th>
+                <th>Ocena</th>
+                <th>    
+                    <a class="btn btn-primary" href="@Url.Action("marks_add", new {stud_id=@ViewBag.stud_id })">dodaj</a>
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Date</td>
+                <td>@item.Subject</td>
+                <td>@item.Value</td>
+                <td>
+                    <a class="btn btn-danger" href="@Url.Action("marks_remove", new {id=@item.Id, })">usuń</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>

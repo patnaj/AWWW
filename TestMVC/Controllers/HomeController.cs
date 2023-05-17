@@ -20,6 +20,15 @@ public class HomeController : Controller
         return View("student_index",Db.GetStudentList());
     }
 
+    public IActionResult Marks(string id)
+    {
+        // return Json(Db.GetMarksList(id));
+        var stud = Db.GetStudent(id);
+        ViewBag.stud = stud?.Email;
+        ViewBag.stud_id = stud?.Id;
+        return View("mark_index",Db.GetMarksList(id));
+    }
+    
 
     public IActionResult Privacy()
     {
