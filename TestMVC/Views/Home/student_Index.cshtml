@@ -6,6 +6,12 @@
 <div class="text-center">
     <h1 class="display-4">Studenci:</h1>
 
+    @if(ViewBag.teacher){
+        <a class="btn btn-primary" href="@Url.Action("AddRole", new {remove=true})" >Odbierz mi role nauczyciela</a>
+    }else{
+        <a class="btn btn-primary" href="@Url.Action("AddRole")" >Nadaj mi role nauczyciela</a>
+    }
+
     <table class="table">
         <thead>
             <tr>
