@@ -17,13 +17,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return Json( 
-        // Db.GetMarksList(null)
-            Db.GetStudentList()
-        );
-
-        return View();
+        return View("student_index",Db.GetStudentList());
     }
+
 
     public IActionResult Privacy()
     {
