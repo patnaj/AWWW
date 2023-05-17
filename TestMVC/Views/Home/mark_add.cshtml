@@ -1,0 +1,35 @@
+﻿@model Mark
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dodaj ocene do: @ViewBag.stud_id</h1>
+
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+
+    <form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Data</th>
+                <th>Przedmiot</th>
+                <th>Ocena</th>
+                <th>    
+                </th>
+            </tr>
+        </thead>
+            <tr>
+                <td><input asp-for="Id" type="hidden" /></td>
+                <td><input asp-for="Date"/></td>
+                <td><input asp-for="Subject"/></td>
+                <td><input asp-for="Value"/></td>
+                <td>
+                    <input class="btn btn-danger" type="submit" value="Ok">
+                </td>
+            </tr>
+    </table>
+    </form>
+
+</div>

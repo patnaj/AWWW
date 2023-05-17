@@ -9,7 +9,7 @@ namespace TestMVC.Models
         public int Id {get;set;}
         public string StudentId {get;set;} = "";
         [ForeignKey("StudentId")]
-        public virtual Student Student { get; set; } = null!;
+        public virtual Student? Student { get; set; }
         [Required]
         public DateTime Date { get; set; }
         [Required]

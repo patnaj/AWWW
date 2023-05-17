@@ -28,7 +28,41 @@ public class HomeController : Controller
         ViewBag.stud_id = stud?.Id;
         return View("mark_index",Db.GetMarksList(id));
     }
-    
+
+    [HttpGet]
+    public IActionResult marks_remove(int id)
+    {
+        return View("confirm");
+    }
+
+    [HttpPost]
+    public IActionResult marks_remove(int id, bool ok = true)
+    {
+        var s = Db.GetMarksList(null, i=>i.Id == id).FirstOrDefault();
+        if(s != null)
+            Db.Delete(s);
+        return RedirectToAction("marks", new {id=s?.StudentId});
+    }
+
+    [HttpGet]
+    public IActionResult marks_add(string stud_id)
+    {
+        ViewBag.stud_id = stud_id;
+        return View("mark_add", new Mark(){Date=DateTime.Now});
+    }
+
+    [HttpPost]
+    public IActionResult marks_add(string stud_id, Mark mark)
+    {
+        ViewBag.stud_id = stud_id;
+        if(!ModelState.IsValid)
+            return View("mark_add", mark);
+        
+        mark.StudentId = stud_id;
+        Db.AddMark(mark);
+        return RedirectToAction("marks", new {id=stud_id});
+    }
+
 
     public IActionResult Privacy()
     {
